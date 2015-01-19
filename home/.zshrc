@@ -389,26 +389,21 @@ zrclocal() {
 }
 
 # locale setup
-source ~/.config/locale.conf
+[ -f ~/.config/locale.conf ] && source ~/.config/locale.conf
 
 for var in LANG LC_ALL LC_MESSAGES ; do
     [[ -n ${(P)var} ]] && export $var
 done
 
-echo "I AM HERE" >/tmp/iamhere.txt
-
 # set some variables
 if check_com -c vim ; then
-#v#
     export EDITOR=${EDITOR:-vim}
 else
     export EDITOR=${EDITOR:-vi}
 fi
 
-#v#
 export PAGER=${PAGER:-less}
 
-#v#
 export MAIL=${MAIL:-/var/mail/$USER}
 
 # if we don't set $SHELL then aterm, rxvt,.. will use /bin/sh or /bin/bash :-/
@@ -3332,11 +3327,11 @@ zrclocal
 alias npm-exec='PATH=$(npm bin):$PATH'
 export PATH="$PATH:/home/baron/lib/node_modules/.bin"
 
-if [[ "$TERM" != "screen" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
-    WHOAMI=$(whoami)
-    if tmux has-session -t $WHOAMI 2>/dev/null; then
-        tmux -2 attach-session -t $WHOAMI
-    else
-        tmux -2 new-session -s $WHOAMI
-    fi
-fi
+#if [[ "$TERM" != "screen" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
+#    WHOAMI=$(whoami)
+#    if tmux has-session -t $WHOAMI 2>/dev/null; then
+#        tmux -2 attach-session -t $WHOAMI
+#    else
+#        tmux -2 new-session -s $WHOAMI
+#    fi
+#fi
