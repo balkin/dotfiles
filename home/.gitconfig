@@ -3,3 +3,5 @@
 	name = Ruslan Balkin
 [push]
 	default = simple
+[core]
+	autocrlf = input
