@@ -1,3 +1,8 @@
+if [ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ]; then
+    source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+    fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+fi
+
 # just execute 'ZSH_PROFILE_RC=1 zsh' and run 'zprof' to get the details
 if [[ $ZSH_PROFILE_RC -gt 0 ]] ; then
     zmodload zsh/zprof
@@ -5,6 +10,8 @@ fi
 
 # load .zshrc.pre to give the user the chance to overwrite the defaults
 [[ -r ${ZDOTDIR:-${HOME}}/.zshrc.pre ]] && source ${ZDOTDIR:-${HOME}}/.zshrc.pre
+
+autoload -U colors && colors
 
 # check for version/system
 # check for versions (compatibility reasons)
@@ -3327,11 +3334,6 @@ zrclocal
 alias npm-exec='PATH=$(npm bin):$PATH'
 export PATH="$PATH:/home/baron/lib/node_modules/.bin"
 
-#if [[ "$TERM" != "screen" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
-#    WHOAMI=$(whoami)
-#    if tmux has-session -t $WHOAMI 2>/dev/null; then
-#        tmux -2 attach-session -t $WHOAMI
-#    else
-#        tmux -2 new-session -s $WHOAMI
-#    fi
-#fi
+promptinit
+prompt baron
+
