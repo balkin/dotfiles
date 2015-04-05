@@ -3331,8 +3331,13 @@ zrclocal
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/baron/.gvm/bin/gvm-init.sh" ]] && source "/home/baron/.gvm/bin/gvm-init.sh"
+
+# IMPORT GO
+[[ -s "/home/baron/.config/go.sh" ]] && source "/home/baron/.config/go.sh"
+
+export NODE_PATH="/home/baron/node_modules"
 alias npm-exec='PATH=$(npm bin):$PATH'
-export PATH="$PATH:/home/baron/lib/node_modules/.bin"
+export PATH="${PATH}:${NODE_PATH}/.bin"
 
 promptinit
 prompt baron

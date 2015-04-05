@@ -1,3 +1,7 @@
 [user]
 	email = baron@baron.su
 	name = Ruslan Balkin
+[push]
+	default = simple
+[core]
+	autocrlf = input
