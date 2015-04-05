@@ -94,7 +94,7 @@ rofi.yoffset:          0
 rofi.xoffset:          0
 rofi.fixed-num-lines:  false
 rofi.hmode:            false
-rofi.terminal:         x-terminal-emulator
+rofi.terminal:         urxvt
 rofi.ssh-client:       ssh
 rofi.ssh-command:      {terminal} -e {ssh-client} {host}
 rofi.run-command:      {cmd}

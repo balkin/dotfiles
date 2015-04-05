@@ -1,0 +1,5 @@
+#!/bin/sh
+git config --global user.email baron@baron.su
+git config --global user.name "Ruslan Balkin"
+git config --global push.default simple
+

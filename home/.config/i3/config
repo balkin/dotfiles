@@ -4,9 +4,14 @@
 exec_always xrdb -merge ~/.Xresources
 
 set $mod Mod4
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono Bold 8
 workspace_layout tabbed
 floating_modifier $mod
+
+# Colours		border	bg	fg	indic
+client.focused          #b58900 #815500 #eee8d5 #cb4b16
+client.unfocused        #586e75 #073642 #95abb3 #292d2e
+client.focused_inactive #586e75 #073642 #b3c1c1 #292d2e
 
 assign [class="Thunar"] → 8:fm
 assign [class="Skype"] → 9:chat
@@ -19,8 +24,8 @@ bindsym $mod+s exec --no-startup-id rofi -show ssh -now
 bindsym Mod1+Tab exec --no-startup-id rofi -show window now
 
 # volume control
-bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- '-5%'
-bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- '+5%'
+bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
+bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
 
 # brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -steps 1 -time 0 -dec 5
@@ -142,6 +147,8 @@ mode $MENU {
 }
 
 bindsym $mod+w mode $MENU
+bindsym $mod+o move scratchpad
+bindsym $mod+slash scratchpad show
 
 bindsym $mod+r mode "resize"
 
@@ -162,9 +169,8 @@ exec --no-startup-id thunar
 # exec --no-startup-id candybar
 # exec pulseaudio -D
 exec --no-startup-id feh --bg-scale /home/baron/Pictures/Backgrounds/BlueCool.jpg
+exec --no-startup-id urxvt -name scratchpad
 
-bindsym $mod+p [instance="^scratchpad$"] scratchpad show
-bindsym $mod+o [instance="^scratchpad$"] move scratchpad
 for_window [instance="^scratchpad$"] move scratchpad
 for_window [class="^Pidgin$" window_role="^conversation$"] resize grow width 0 px or 30 ppt
 
