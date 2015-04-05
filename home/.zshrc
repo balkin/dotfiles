@@ -3330,7 +3330,9 @@ zrclocal
 # Local variables:
 # mode: sh
 # End:
-. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
