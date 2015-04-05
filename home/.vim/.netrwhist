@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/var/lib/layman/sabayon/dev-util/adobe-air-sdk-bin'
+let g:netrw_dirhist_2='/home/baron/.config/candybar'
+let g:netrw_dirhist_3='/mnt/usb/boot/grub'
+let g:netrw_dirhist_4='/home/baron/.config/i3status'
+let g:netrw_dirhist_5='/home/baron/.config/i3blocks'
+let g:netrw_dirhist_6='/home/baron/.config'
+let g:netrw_dirhist_7='/home/baron/gocode/src/github.com/elazarl/goproxy/examples/noRedditAtWorktime'
+let g:netrw_dirhist_8='/home/baron/.IntelliJIdea14/config/options'
