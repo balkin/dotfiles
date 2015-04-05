@@ -3,6 +3,10 @@ if [ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ]; then
     fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 fi
 
+if [ -d "$HOME/.config/zsh/functions" ]; then
+    fpath=($HOME/.config/zsh/functions $fpath)
+fi
+
 # just execute 'ZSH_PROFILE_RC=1 zsh' and run 'zprof' to get the details
 if [[ $ZSH_PROFILE_RC -gt 0 ]] ; then
     zmodload zsh/zprof
