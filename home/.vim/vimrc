@@ -4,4 +4,5 @@ set background=dark
 colorscheme solarized
 set nu
 nmap <C-N><C-N> :set invnumber<CR>
+set ts=4
 
