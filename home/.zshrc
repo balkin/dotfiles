@@ -2151,6 +2151,9 @@ grml_prompt_fallback() {
 
     p0="${RED}%(?..%? )${WHITE}${debian_chroot:+($debian_chroot)}"
     p1="${BLUE}%n${NO_COLOR}@%m %40<...<%B%~%b%<< "'${vcs_info_msg_0_}'"%# "
+	echo "AA"
+	echo "AA"
+	echo "AA"
     if (( EUID == 0 )); then
         PROMPT="${BLUE}${p0}${RED}${p1}"
     else
@@ -3340,6 +3343,7 @@ fi
 
 # IMPORT GO
 [[ -s "/home/baron/.config/go.sh" ]] && source "/home/baron/.config/go.sh"
+[[ -s "/home/baron/.config/zsh/git.zsh" ]] && source "/home/baron/.config/zsh/git.zsh"
 
 export NODE_PATH="/home/baron/node_modules"
 alias npm-exec='PATH=$(npm bin):$PATH'

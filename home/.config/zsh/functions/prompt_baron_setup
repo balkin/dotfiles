@@ -4,7 +4,7 @@ prompt_baron_setup () {
       ZSH_THEME_HOST_PREFIX="${HOSTSLUG_COLOUR:=%{$bg_bold[red]$fg_bold[white]}[$HOSTSLUG]%}%{$reset_color%} "
     fi
   fi
-  PS1="$ZSH_THEME_HOST_PREFIX%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) %#%{$reset_color%} "
+  PS1="$ZSH_THEME_HOST_PREFIX%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_super_status)%#%{$reset_color%} "
 
   PS2="\`%_>"
   #prompt_opts=(cr percent)
