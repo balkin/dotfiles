@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [[ `pidof pulseaudio` ]]; then
+	pactl set-sink-volume @DEFAULT_SINK@ '-5%'
+else
+	amixer set Master 5%-
+fi
