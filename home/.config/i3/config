@@ -30,7 +30,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up
 # brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -steps 1 -time 0 -dec 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -steps 1 -time 0 -inc 5
-bindsym XF86AudioMute exec --no-startup-id /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMute exec --no-startup-id volume-mute
 
 # show battery stats
 #bindsym XF86Battery exec --no-startup-id gnome-power-statistics

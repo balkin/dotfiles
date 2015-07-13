@@ -3,5 +3,5 @@
 if [[ `pidof pulseaudio` ]]; then
 	pactl set-sink-volume @DEFAULT_SINK@ '-5%'
 else
-	amixer set Master 5%-
+	amixer set Master 5%- unmute
 fi
