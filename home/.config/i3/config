@@ -133,7 +133,7 @@ mode $MENU {
 	bindsym d exec drivel, mode default
 	bindsym f exec firefox, mode default
 	bindsym g exec geany, mode default
-	bindsym i exec intellij-idea-14-ultimate, mode default
+	bindsym i exec intellij-idea-ultimate-edition, mode default
 	bindsym t exec thunar, mode default
 	bindsym o exec odeskteam-qt4, mode default
 	bindsym s exec skype, mode default

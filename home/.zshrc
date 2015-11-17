@@ -3350,6 +3350,6 @@ export NODE_PATH="/home/baron/node_modules"
 alias npm-exec='PATH=$(npm bin):$PATH'
 export PATH="${PATH}:${NODE_PATH}/.bin"
 
-promptinit
-prompt baron
+#promptinit
+#prompt baron
 
