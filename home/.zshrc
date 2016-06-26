@@ -3338,6 +3338,11 @@ if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 fi
 
 
+if [ -d "/opt/android-sdk" ]; then
+export ANDROID_HOME=/opt/android-sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/baron/.gvm/bin/gvm-init.sh" ]] && source "/home/baron/.gvm/bin/gvm-init.sh"
 
@@ -3349,6 +3354,6 @@ export NODE_PATH="/home/baron/node_modules"
 alias npm-exec='PATH=$(npm bin):$PATH'
 export PATH="${PATH}:${NODE_PATH}/.bin"
 
-promptinit
-prompt baron
+#promptinit
+#prompt baron
 

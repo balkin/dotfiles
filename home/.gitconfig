@@ -7,3 +7,6 @@
 	autocrlf = input
 [credential]
 	helper = store
+[alias]
+	l = log --oneline --graph
+	st = status
