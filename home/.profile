@@ -29,3 +29,7 @@ fi
 [[ -s "/home/baron/.gvm/bin/gvm-init.sh" ]] && source "/home/baron/.gvm/bin/gvm-init.sh"
 export GOPATH=$HOME/gocode
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/baron/.sdkman"
+[[ -s "/home/baron/.sdkman/bin/sdkman-init.sh" ]] && source "/home/baron/.sdkman/bin/sdkman-init.sh"

@@ -8,5 +8,8 @@
 [credential]
 	helper = store
 [alias]
-	l = log --oneline --graph
+	l = log --graph --pretty=oneline --abbrev-commit
 	st = status
+	br = branch
+	remote = remote
+	upstream = remote -v show upstream

@@ -2833,8 +2833,6 @@ export COLORTERM="yes"
 # general
 #a2# Execute \kbd{du -sch}
 alias da='du -sch'
-#a2# Execute \kbd{jobs -l}
-alias j='jobs -l'
 
 # listing stuff
 #a2# Execute \kbd{ls -lSrah}
@@ -3333,10 +3331,25 @@ zrclocal
 # Local variables:
 # mode: sh
 # End:
+
+export NODE_PATH="/home/baron/node_modules"
+export PATH="${PATH}:${NODE_PATH}/.bin"
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
+alias npm-exec='PATH=$(npm bin):$PATH'
+alias gert2='rdesktop -u Administrator -p WitGZ8zyp7rA -g 1920x900 -z -C -a 8 -k en-us 134.213.27.169'
+
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+if [ -f /usr/share/zsh/scripts/zgen/zgen.zsh ]; then
+    source /usr/share/zsh/scripts/zgen/zgen.zsh
+fi
+
+if [ -f /usr/share/zsh/scripts/antigen/antigen.zsh ]; then
+	source /usr/share/zsh/scripts/antigen/antigen.zsh
+	antigen bundle edouard-lopez/yeoman-zsh-plugin
+fi
 
 if [ -d "/opt/android-sdk" ]; then
 export ANDROID_HOME=/opt/android-sdk
@@ -3349,11 +3362,19 @@ fi
 # IMPORT GO
 [[ -s "/home/baron/.config/go.sh" ]] && source "/home/baron/.config/go.sh"
 [[ -s "/home/baron/.config/zsh/git.zsh" ]] && source "/home/baron/.config/zsh/git.zsh"
-
-export NODE_PATH="/home/baron/node_modules"
-alias npm-exec='PATH=$(npm bin):$PATH'
-export PATH="${PATH}:${NODE_PATH}/.bin"
+[[ -s "/home/baron/.config/zsh/git-prompt.sh" ]] && source "/home/baron/.config/zsh/git-prompt.sh"
 
 #promptinit
 #prompt baron
 
+source /etc/profile.d/autojump.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/baron/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/home/baron/google-cloud-sdk/completion.zsh.inc'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/baron/.sdkman"
+[[ -s "/home/baron/.sdkman/bin/sdkman-init.sh" ]] && source "/home/baron/.sdkman/bin/sdkman-init.sh"
