@@ -1,6 +1,7 @@
 [user]
 	email = baron@baron.su
 	name = Ruslan Balkin
+	signingkey = E74E46A2
 [push]
 	default = simple
 [core]

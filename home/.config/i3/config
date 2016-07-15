@@ -146,6 +146,7 @@ mode $MENU {
 
 bindsym $mod+w mode $MENU
 bindsym $mod+o move scratchpad
+bindsym $mod+shift+o floating toggle
 bindsym $mod+slash scratchpad show
 
 bindsym $mod+r mode "resize"
@@ -154,8 +155,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	#i3bar_command  /usr/bin/i3bar-icons
-        #status_command j4status
-	status_command i3blocks
+    #status_command j4status
+	#status_command i3blocks
+	status_command goi3bar --config-path $HOME/.config/i3/goi3bar.json
 }
 
 #### AUTOSTART ####
@@ -163,11 +165,15 @@ exec --no-startup-id syndaemon -t -k -i 1 -d -R
 exec --no-startup-id nm-applet
 exec --no-startup-id rescuetime
 exec --no-startup-id skype
+exec --no-startup-id pidgin
 exec --no-startup-id thunar
 # exec --no-startup-id candybar
 # exec pulseaudio -D
 exec --no-startup-id feh --bg-scale /home/baron/Pictures/Backgrounds/BlueCool.jpg
 exec --no-startup-id urxvt -name scratchpad
+exec --no-startup-id viber
+exec --no-startup-id hipchat
+exec --no-startup-id /home/baron/rus
 
 for_window [instance="^scratchpad$"] move scratchpad
 for_window [class="^Pidgin$" window_role="^conversation$"] resize grow width 0 px or 30 ppt
