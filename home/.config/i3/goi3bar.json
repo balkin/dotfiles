@@ -56,7 +56,7 @@
                     "devices": {
                         "eth": {
                             "name": "eth",
-                            "identifier": "enp0s7"
+                            "identifier": "eth0"
                         },
                         "wifi": {
                             "name": "wifi",
