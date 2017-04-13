@@ -81,7 +81,7 @@ rofi.opacity:          75
 rofi.width:            50
 rofi.lines:            15
 rofi.columns:          1
-rofi.font:             mono12
+rofi.font:             Ubuntu Mono 12
 rofi.fg:               #ffffff
 rofi.bg:               #073642
 rofi.hlfg:             #ffffff

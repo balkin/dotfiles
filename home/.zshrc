@@ -3367,13 +3367,21 @@ fi
 #promptinit
 #prompt baron
 
-source /etc/profile.d/autojump.zsh
+if [ -f /etc/profile.d/autojump.zsh ]; then
+	source /etc/profile.d/autojump.zsh
+elif [ -f /usr/share/autojump/autojump.zsh ]; then
+	source /usr/share/autojump/autojump.zsh
+fi
 
+if [ -f /home/baron/google-cloud-sdk/path.zsh.inc ]; then
 # The next line updates PATH for the Google Cloud SDK.
 source '/home/baron/google-cloud-sdk/path.zsh.inc'
+fi
 
+if [ -f /home/baron/google-cloud-sdk/completion.zsh.inc ]; then
 # The next line enables shell command completion for gcloud.
 source '/home/baron/google-cloud-sdk/completion.zsh.inc'
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/baron/.sdkman"
