@@ -17,6 +17,10 @@ assign [class="Thunar"] → 8:fm
 assign [class="Skype"] → 9:chat
 assign [class="Pidgin"] → 9:chat
 
+for_window [floating class="Hubstaff" instance="Hubstaff"] move position 1919px 1079px; move container to workspace 7;
+for_window [title="Hubstaff" class="Hubstaff" instance="Hubstaff"] floating enable;
+for_window [title="Time Tracker" class="upwork" instance="Upwork"] floating enable; move posiion 300px 1px; move container to workspace 7;
+
 bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+a exec --no-startup-id j4-dmenu-desktop
 bindsym $mod+l exec --no-startup-id /usr/bin/xscreensaver-command -lock
@@ -156,8 +160,9 @@ bindsym $mod+r mode "resize"
 bar {
 	#i3bar_command  /usr/bin/i3bar-icons
     #status_command j4status
-	status_command i3blocks
+	#status_command i3blocks
 	#status_command $HOME/bin/goi3bar --config-path $HOME/.config/i3/goi3bar.json
+	status_command py3status
 }
 
 #### AUTOSTART ####

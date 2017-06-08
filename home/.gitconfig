@@ -14,3 +14,5 @@
 	br = branch
 	remote = remote
 	upstream = remote -v show upstream
+[url "git@git.balkin.ru:"]
+	insteadOf = http://git.balkin.ru/
