@@ -30,20 +30,21 @@ bindsym Mod1+Tab exec --no-startup-id rofi -show window now
 # volume control
 bindsym XF86AudioLowerVolume exec --no-startup-id volume-down
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up
+bindsym XF86AudioMute exec --no-startup-id volume-mute
 
 # brightness control
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -steps 1 -time 0 -dec 5
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -steps 1 -time 0 -inc 5
-bindsym XF86AudioMute exec --no-startup-id volume-mute
+#bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -steps 1 -time 0 -dec 5
+#bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -steps 1 -time 0 -inc 5
 
 # show battery stats
 #bindsym XF86Battery exec --no-startup-id gnome-power-statistics
 
 # kill focused window
 bindsym Mod1+F4 kill
+bindsym $mod+x kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id "rofi -modi run,ssh,drun,calc -show drun"
 bindsym $mod+Print exec --no-startup-id exec teiler
 bindsym Print exec --no-startup-id exec teiler --quickfs
 bindsym Mod1+Print exec --no-startup-id exec teiler --quick
@@ -114,6 +115,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+bindsym $mod+Shift+s exec systemctl suspend
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+t exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -130,18 +132,23 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-set $MENU "Chrome Firefox Drivel Geany IDEA Thunar ODesk Skype VirtualBox"
+set $MENU "Chrome Firefox Drivel Geany IDEA Thunar Upwork Brave Skype VirtualBox"
 
 mode $MENU {
-	bindsym c exec google-chrome-stable, mode default
-	bindsym d exec drivel, mode default
-	bindsym f exec firefox, mode default
-	bindsym g exec geany, mode default
-	bindsym i exec intellij-idea-ultimate-edition, mode default
 	bindsym t exec thunar, mode default
+	bindsym u exec upwork, mode default
+	bindsym i exec intellij-idea-ultimate-edition, mode default
 	bindsym o exec odeskteam-qt4, mode default
+
 	bindsym s exec skype, mode default
+	bindsym d exec drivel, mode default
+	bindsym f exec firefox-developer-edition || firefox, mode default
+	bindsym g exec geany, mode default
+	
+	bindsym c exec google-chrome-stable, mode default
 	bindsym v exec VirtualBox, mode default
+	bindsym b exec brave, mode default
+
 	bindsym shift+q exec i3-msg exit && killall lxdm-session
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -166,19 +173,21 @@ bar {
 }
 
 #### AUTOSTART ####
-exec --no-startup-id syndaemon -t -k -i 1 -d -R
+# exec --no-startup-id syndaemon -t -k -i 1 -d -R
 exec --no-startup-id nm-applet
 exec --no-startup-id rescuetime
 exec --no-startup-id skype
-exec --no-startup-id pidgin
 exec --no-startup-id thunar
+exec --no-startup-id thunderbird
+exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id pidgin
 # exec --no-startup-id candybar
 # exec pulseaudio -D
-exec --no-startup-id feh --bg-scale /home/baron/Pictures/Backgrounds/BlueCool.jpg
-exec --no-startup-id urxvt -name scratchpad
-exec --no-startup-id viber
-exec --no-startup-id hipchat
-exec --no-startup-id /home/baron/rus
+# exec --no-startup-id feh --bg-scale /home/baron/Pictures/Backgrounds/BlueCool.jpg
+# exec --no-startup-id urxvt -name scratchpad
+# exec --no-startup-id viber
+# exec --no-startup-id hipchat
+# exec --no-startup-id /home/baron/rus
 
 for_window [instance="^scratchpad$"] move scratchpad
 for_window [class="^Pidgin$" window_role="^conversation$"] resize grow width 0 px or 30 ppt

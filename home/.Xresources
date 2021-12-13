@@ -104,3 +104,7 @@ rofi.levenshtein-sort: false
 rofi.key:              F12
 rofi.rkey:             mod1+F2
 rofi.skey:             mod1+F3
+
+
+Xcursor.size: 32
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+setxkbmap -option grp:win_space_toggle
+setxkbmap -option grp:caps_toggle
+
